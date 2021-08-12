@@ -1,0 +1,3 @@
+pyTelegramBotAPI==2.2.3
+web3
+emoji

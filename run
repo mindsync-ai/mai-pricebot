@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+API_KEY="${1}"
+
+docker ps -a | grep mai-pricebot &> /dev/null
+
+if [ "${?}" -eq 0 ]; then
+    docker stop mai-pricebot &> /dev/null
+    docker rm mai-pricebot &> /dev/null
+fi 
+
+docker run --restart always --name mai-pricebot -e MINDSYNC_TG_API_KEY="${API_KEY}" mindsync/mai-pricebot:0.0.1
