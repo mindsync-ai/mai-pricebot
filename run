@@ -9,4 +9,4 @@ if [ "${?}" -eq 0 ]; then
     docker rm mai-pricebot &> /dev/null
 fi 
 
-docker run --restart always --name mai-pricebot -e MINDSYNC_TG_API_KEY="${API_KEY}" -d mindsync/mai-pricebot:0.0.1
+docker run --restart always --name mai-pricebot -e MINDSYNC_TG_API_KEY="${API_KEY}" -d mindsync/mai-pricebot:0.0.2
